@@ -7,7 +7,7 @@ from statistiques_corona import corona_par_pays
 from statistiques_corona import donnees_pire_mort_pays
 
 def camembert_regions(show=False):
-"""Affiche deux graphiques circulaires, un avec les décès par région et un avec les cas par région"""
+	"""Affiche deux graphiques circulaires, un avec les décès par région et un avec les cas par région"""
 	
 	tableau_donnees_reg = corona_par_region()
 	

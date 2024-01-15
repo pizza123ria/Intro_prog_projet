@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def cas_morts ():
+	""" renvoie un tableau 2D numpy avec les colonnes suivants par pays: nombre des cas, nombre des décès, région"""
 
 	# récuperer des données (pas encore organisés)
 	page = requests.get("https://www.worldometers.info/coronavirus/countries-where-coronavirus-has-spread/")
@@ -34,6 +35,7 @@ cas_morts()
 
 	
 def population ():
+	"""renvoie un tableau 2D numpy avec les colonnes suivants par pays: population"""
 
 	# récuperer des données (pas encore organisés)
 	page = requests.get("https://www.worldometers.info/world-population/population-by-country/")
@@ -58,6 +60,7 @@ def population ():
 	return population_tableau
 
 def capitales_coordonnees (): 
+	"""renvoie un tableau 2D numpy avec les colonnes suivants par pays: latitude, longitude. Latitude est longitude se refèrent aux deux données pour la capitale primary et si il y'en a plusieurs, pour une capitale par hasard"""
 
 	#stream
 	f = open("worldcities.csv", "r")

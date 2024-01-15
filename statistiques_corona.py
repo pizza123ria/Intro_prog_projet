@@ -3,7 +3,7 @@ import numpy as np
 from operator import itemgetter
 
 def tableau_donnees(): 
-""" Affiche un ta"""
+	""" Renvoie un tableau 2D numpy avec les colonnes suivants pour chaque pays : nombre des cas, nombre de déces, region, population, latitude, longitude"""
 
 	#stream
 	f = open("donnees_corona.csv", "r")
@@ -22,6 +22,7 @@ def tableau_donnees():
 tableau_donnees()
 
 def corona_par_region(): 
+	"""Renvoie un tableau 2D numpy avec les colonnes suivantes par region : population, nombre de morts, nombre de cas """
 
 	tableau_np = tableau_donnees()
 
@@ -48,6 +49,7 @@ def corona_par_region():
 	return tableau_reg
 
 def corona_par_pays(list_countries = tableau_donnees()[1:,0]): 
+	"""Renvoie un tableau 2D numpy avec les colonnes suivants pour des pays dans list_countries : nombre de cas par millions d'habitants, nombre de décès par millions d'habitants, population, latitude, longitude. Si aucune liste est donnée, le tableau est donné pour tous les pays"""
 
 	tableau_complet = tableau_donnees()
 	
@@ -69,6 +71,7 @@ def corona_par_pays(list_countries = tableau_donnees()[1:,0]):
 
 
 def donnees_pire_mort_pays(k, n=0):
+	"""Un tableau 2D numpy avec les premiers k pays des décès par millions d'habitants pour des pays ayant plus que n habitants est renvoié"""
 	
 	tableau_de_base = corona_par_pays()
 	
@@ -85,6 +88,7 @@ def donnees_pire_mort_pays(k, n=0):
 
 
 def donnees_pire_cas_pays(k, n=0):
+	"""Un tableau 2D numpy avec les premiers k pays des cas par millions d'habitants pour des pays ayant plus que n habitants est renvoié"""
 	
 	tableau_de_base = corona_par_pays()
 
